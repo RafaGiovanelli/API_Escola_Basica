@@ -98,7 +98,7 @@ namespace API_Basica_Escola.Application.Alunos
             listaAlunos.Add(new Aluno() { Nome = "Alisson Costa", Idade = 25 });
             listaAlunos.Add(new Aluno() { Nome = "Matheus Arduino", Idade = 24 });
 
-            var aluno = listaAlunos.Where(x => x.Idade == 24);
+            var aluno = listaAlunos.Where(x => x.Idade == 24).ToList();
 
 
             //PODER DO LAMBDA
