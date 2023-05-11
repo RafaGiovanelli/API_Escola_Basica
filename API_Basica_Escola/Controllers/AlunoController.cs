@@ -13,13 +13,32 @@ namespace API_Basica_Escola.Controllers
         {
             new AlunoApplication().CadastroAluno(aluno);
 
-            return "Cadastro concoluido com sucesso";
+            return "Cadastro concoluido com sucesso!!!";
         }
 
         [HttpGet("ListarAlunos")]
         public List<Aluno> ListaDeAlunos()
         {
             return new AlunoApplication().ListarAluno();
+        }
+
+        [HttpGet("BuscaAlunoPorNome")]
+        public Aluno BuscaAlunoPorNome(string nomeAluno)
+        {
+            return new AlunoApplication().BuscaAlunoPorNome(nomeAluno);
+        }
+
+        [HttpPut("EditaAluno")]
+        public Aluno EditaAlunos(Aluno aluno)
+        {
+            return new AlunoApplication().EditaAluno(aluno);
+        }
+
+        [HttpDelete("DeletaAluno")]
+        public bool DeletaAlunos(string nomeAluno)
+        {
+            var retornoBoolDeDelecaoAluno = new AlunoApplication().DeletaAluno(nomeAluno);
+            return retornoBoolDeDelecaoAluno;
         }
 
         [HttpPost("MediaAlunos")]
