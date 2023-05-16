@@ -53,12 +53,13 @@ namespace API_Basica_Escola.Application.Alunos
 
         public Aluno EditaAluno(Aluno aluno)
         {
-            var alunoMemoria = new Aluno();
-
-            alunoMemoria.Nome = "Raphael";
-            alunoMemoria.Idade = 24;
-            alunoMemoria.Matricula = 777;
-            alunoMemoria.Serie = "3A";
+            var alunoMemoria = new Aluno()
+            {
+                Nome = "Raphael",
+                Idade = 24,
+                Matricula = 777,
+                Serie = "3A"
+            };
 
             alunoMemoria.Nome = aluno.Nome;
             alunoMemoria.Idade = aluno.Idade;

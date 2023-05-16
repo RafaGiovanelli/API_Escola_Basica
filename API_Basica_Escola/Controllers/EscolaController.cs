@@ -21,5 +21,23 @@ namespace API_Basica_Escola.Controllers
         {
             return new EscolaApplication().ListaEscola();
         }
+
+        [HttpPut("EditaEscola")]
+        public Escolas EditarEscolas(Escolas editaEscolas)
+        {
+            return new EscolaApplication().EditaEscola(editaEscolas);
+        }
+
+        [HttpDelete("DeletaEscola")]
+        public bool DeletarEscolas(string nomeEscolas)
+        {
+            return new EscolaApplication().DeletaEscolas(nomeEscolas);
+        }
+
+        [HttpGet("BuscaEscolaPorNome")]
+        public Escolas BuscaEscolasPorNome(string nomeEscola)
+        {
+            return new EscolaApplication().BuscaEscolas(nomeEscola);
+        }
     }
 }
