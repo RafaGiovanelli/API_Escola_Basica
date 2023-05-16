@@ -21,24 +21,24 @@ namespace API_Basica_Escola.Controllers
         {
             return new AlunoApplication().ListarAluno();
         }
-
-        [HttpGet("BuscaAlunoPorNome")]
-        public Aluno BuscaAlunoPorNome(string nomeAluno)
-        {
-            return new AlunoApplication().BuscaAlunoPorNome(nomeAluno);
-        }
-
+        
         [HttpPut("EditaAluno")]
         public Aluno EditaAlunos(Aluno aluno)
         {
             return new AlunoApplication().EditaAluno(aluno);
         }
-
+        
         [HttpDelete("DeletaAluno")]
         public bool DeletaAlunos(string nomeAluno)
         {
             var retornoBoolDeDelecaoAluno = new AlunoApplication().DeletaAluno(nomeAluno);
             return retornoBoolDeDelecaoAluno;
+        }
+
+        [HttpGet("BuscaAlunoPorNome")]
+        public Aluno BuscaAlunoPorNome(string nomeAluno)
+        {
+            return new AlunoApplication().BuscaAlunoPorNome(nomeAluno);
         }
 
         [HttpPost("MediaAlunos")]
