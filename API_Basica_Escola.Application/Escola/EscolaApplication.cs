@@ -1,5 +1,6 @@
 ﻿using API_Basica_Escola.Models.Alunos;
 using API_Basica_Escola.Models.Escola;
+using System.Security.Cryptography.X509Certificates;
 
 namespace API_Basica_Escola.Application.Escola
 {
@@ -39,6 +40,56 @@ namespace API_Basica_Escola.Application.Escola
 
             return listaEscolas;
 
+        }
+
+        //Edita Escola
+        public Escolas EditaEscola(Escolas editaEscolas)
+        {
+            var escolaMemoria = new Escolas()
+            {
+                Nome = "Pantoja",
+                Logradouro = "Rua Cananeia",
+                Numero = 115,
+                Bairro = "Vila Prudente",
+                Capacidade = 1000
+            };
+
+            escolaMemoria.Nome = editaEscolas.Nome;
+            escolaMemoria.Logradouro = editaEscolas.Logradouro;
+            escolaMemoria.Numero = editaEscolas.Numero;
+            escolaMemoria.Bairro = editaEscolas.Bairro;
+            escolaMemoria.Capacidade = editaEscolas.Capacidade;
+
+            return escolaMemoria;
+        }
+    
+        //Deleta Escola
+        public bool DeletaEscolas(string nomeEscolas)
+        {
+            var listaEscolas = new List<Escolas>();
+
+            listaEscolas.Add(new Escolas(){Nome = "Pantoja", Logradouro = "Rua que sobe", Numero = 115, Bairro = "Vila Prudente", Capacidade = 10000});
+            listaEscolas.Add(new Escolas(){Nome = "Civitatis", Logradouro = "Rua que desce", Numero = 935, Bairro = "Vila Prudente", Capacidade = 1000});
+
+            if (listaEscolas.Remove(listaEscolas.Find(x => x.Nome.ToUpper() == nomeEscolas.ToUpper())))
+            {
+                return true;
+            }
+            else 
+            { 
+                return false;
+            }
+        }
+
+        //Busca Escola Pelo Nome
+        public Escolas BuscaEscolas(string nomeEscolas)
+        {
+            var listaEscolas = new List<Escolas>();
+
+            listaEscolas.Add(new Escolas() { Nome = "Pantoja", Logradouro = "Rua que sobe", Numero = 115, Bairro = "Vila Prudente", Capacidade = 10000 });
+            listaEscolas.Add(new Escolas() { Nome = "Civitatis", Logradouro = "Rua que desce", Numero = 935, Bairro = "Vila Prudente", Capacidade = 1000 });
+
+            return listaEscolas.Find(x => x.Nome.ToUpper() == nomeEscolas.ToUpper());
         }
     }
 }
