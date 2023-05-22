@@ -24,7 +24,7 @@ namespace API_Basica_Escola.Application.Professor
             memoriaProfessor1.Matricula = 6957;
             memoriaProfessor1.Materia = "Matematica";
 
-            memoriaProfessor2.Nome = "Wadecir";
+            memoriaProfessor2.Nome = "Waldecir";
             memoriaProfessor2.Idade = 57;
             memoriaProfessor2.Matricula = 7531;
             memoriaProfessor2.Materia = "Portugues";
@@ -50,7 +50,7 @@ namespace API_Basica_Escola.Application.Professor
             memoriaProfessor.Matricula = editaProfessor.Matricula;
             memoriaProfessor.Materia = editaProfessor.Materia;
 
-            return memoriaProfessor;
+            return memoriaProfessor; 
         }
 
         public bool DeletarProfessores(string nomeProfessor)

@@ -9,7 +9,7 @@ namespace API_Basica_Escola.Controllers
     [ApiController]
     public class ProfessorController : ControllerBase
     {
-        [HttpPut("InserirProfessor")]
+        [HttpPost("InserirProfessor")]
         public string InserirProfessor(Professores nomeProfessor)
         {
             new ProfessorApplication().CadastraProfessor(nomeProfessor);
@@ -35,7 +35,7 @@ namespace API_Basica_Escola.Controllers
             return new ProfessorApplication().DeletarProfessores(nomeProfessor);
         }
 
-        [HttpPut("BuscaProfessorPorNome")]
+        [HttpGet("BuscaProfessorPorNome")]
         public Professores BuscaProfessorPorNome(string nomeProfessor)
         {
             return new ProfessorApplication().BuscaProfessores(nomeProfessor);
